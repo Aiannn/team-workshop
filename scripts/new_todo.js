@@ -35,13 +35,14 @@ function postNewToDo() {
     let categoriesDropdown = document.querySelector('#categories-list-select').value
     let urgencyDropdown = document.querySelector('#urgency-list-select').value
     let descriptionTextarea = document.querySelector('#description').value
-    let deadlineText = document.querySelector('#deadline-text').value
+    // let deadlineText = document.querySelector('#deadline-text').value
+    let date = document.querySelector('#deadline-date').value
 
     let todoData = {
         userid: usersDropdown,
         category: categoriesDropdown,
         description: descriptionTextarea,
-        deadline: deadlineText,
+        deadline: date,
         priority: urgencyDropdown
     }
 
@@ -58,6 +59,11 @@ function postNewToDo() {
         console.log("Success: ", data)
     })
 }
+
+// function showDate() {
+//     let date = document.querySelector('#deadline-date').value
+//     console.log(date)
+// }
 
 getUsers()
 getCategories()
