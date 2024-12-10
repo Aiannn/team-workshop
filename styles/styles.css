@@ -21,10 +21,10 @@ body {
 
 }
 
-.todoimg{
+.deskimg{
     width: 630px;
     height: 550px;
-    opacity: 50%;
+    opacity: 95%;
     position: absolute;
     bottom: 0;
     right: 10%;
