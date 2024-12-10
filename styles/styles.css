@@ -1,0 +1,32 @@
+body {
+  width: 100%;
+  height: 100vh;
+ 
+  background-image: url("todo.jpg");
+  background-position: center;
+  background-size: cover;
+  padding: 10px 10%;
+  overflow: hidden;
+}
+
+.content{
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+.content h2{
+    font-size: 70px;
+}
+
+.content p{
+    margin: 10px 0 30px;
+
+}
+
+.todoimg{
+    width: 630px;
+    height: 600px;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
