@@ -58,14 +58,24 @@ async function showUserTodos() {
       cardPriority.textContent = `Priority: ${todo.priority}`;
       cardBody.appendChild(cardPriority);
 
-      let completedButton = document.createElement("button");
-      completedButton.classList.add("btn", "mt-2");
-      completedButton.style.backgroundColor = "#266b65";
-      completedButton.style.color = "white";
-      completedButton.textContent = "Mark as Completed";
+      let cardID = document.createElement("p");
+      cardID.classList.add("card-text");
+      cardID.textContent = `ID: ${todo.id}`;
+      cardBody.appendChild(cardID);
 
+      const seeDetailsButton = document.createElement("a");
+      seeDetailsButton.href = `http://127.0.0.1:5500/todo_details.html?id=${todo.id}`;
+      seeDetailsButton.textContent = "Details";
+      seeDetailsButton.className = "btn btn-success";
+      seeDetailsButton.style.backgroundColor = "#266b65";
+      seeDetailsButton.style.color = "white";
+
+      //Button
+      //Button.addEventListener('click', function)
+
+      cardBody.appendChild(seeDetailsButton);
       card.appendChild(cardBody);
-      cardBody.appendChild(completedButton);
+      cardBody.appendChild(seeDetailsButton);
       todoContainer.appendChild(card);
     });
   } else {
