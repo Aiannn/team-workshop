@@ -13,7 +13,7 @@ async function getTodoDetails() {
 
   if (todo.completed) {
     completeButton.disabled = true;
-    completeButton.textContent = "Already Completed"; 
+    completeButton.textContent = "Already Completed!"; 
   } else {
     completeButton.addEventListener("click", () => markAsCompleted(todo.id)); 
   }
@@ -27,7 +27,7 @@ async function markAsCompleted(id) {
 
     if (response.ok) {
       completeButton.disabled = true; 
-      completeButton.textContent = "Marked as Completed"; 
+      completeButton.textContent = "Complete!"; 
     } else {
       console.error("Failed to mark as completed");
     }
