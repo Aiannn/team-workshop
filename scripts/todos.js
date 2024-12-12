@@ -24,39 +24,58 @@ async function showUserTodos() {
   let todos = await response.json();
 
   let userTodos = todos.filter((todo) => todo.userid == dropdown.value);
-  console.log(userTodos);
-  console.log(dropdown);
-  console.log(dropdown.value);
 
   let todoContainer = document.getElementById("todoContainer");
+  todoContainer.classList.add("d-flex", "flex-wrap", "gap-4");
   todoContainer.innerHTML = "";
+
   if (userTodos.length > 0) {
-    userTodos.forEach(todo => {
-   
+    userTodos.forEach((todo) => {
       let card = document.createElement("div");
-      card.classList.add("card");
+      card.classList.add("card", "mb-3");
+      card.style.maxWidth = "18rem";
 
-      
-      let cardHeader = document.createElement("h3");
+      let cardBody = document.createElement("div");
+      cardBody.classList.add("card-body", "border-5", "rounded", "border-bottom");
+
+      let cardHeader = document.createElement("h5");
+      cardHeader.classList.add("card-title");
       cardHeader.textContent = todo.description;
-      card.appendChild(cardHeader);
+      cardBody.appendChild(cardHeader);
 
-      
       let cardCategory = document.createElement("p");
+      cardCategory.classList.add("card-text");
       cardCategory.textContent = `Category: ${todo.category}`;
-      card.appendChild(cardCategory);
+      cardBody.appendChild(cardCategory);
 
-      
       let cardDeadline = document.createElement("p");
+      cardDeadline.classList.add("card-text");
       cardDeadline.textContent = `Deadline: ${todo.deadline}`;
-      card.appendChild(cardDeadline);
+      cardBody.appendChild(cardDeadline);
 
-      
       let cardPriority = document.createElement("p");
+      cardPriority.classList.add("card-text");
       cardPriority.textContent = `Priority: ${todo.priority}`;
-      card.appendChild(cardPriority);
+      cardBody.appendChild(cardPriority);
 
-      
+      let cardID = document.createElement("p");
+      cardID.classList.add("card-text");
+      cardID.textContent = `ID: ${todo.id}`;
+      cardBody.appendChild(cardID);
+
+      const seeDetailsButton = document.createElement("a");
+      seeDetailsButton.href = `http://127.0.0.1:5500/todo_details.html?id=${todo.id}`;
+      seeDetailsButton.textContent = "Details";
+      seeDetailsButton.className = "btn btn-success";
+      seeDetailsButton.style.backgroundColor = "#266b65";
+      seeDetailsButton.style.color = "white";
+
+      //Button
+      //Button.addEventListener('click', function)
+
+      cardBody.appendChild(seeDetailsButton);
+      card.appendChild(cardBody);
+      cardBody.appendChild(seeDetailsButton);
       todoContainer.appendChild(card);
     });
   } else {
@@ -64,6 +83,4 @@ async function showUserTodos() {
     noTodosMessage.textContent = "No todos found for this user.";
     todoContainer.appendChild(noTodosMessage);
   }
-
 }
-// It works now
