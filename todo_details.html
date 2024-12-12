@@ -10,7 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/todos_styles.css" />
   </head>
   <body>
     <header>
@@ -46,7 +46,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="todos.html">To Dos</a>
+                <a class="nav-link" href="todos.html">To Dos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="new_todo.html">New To Do</a>
@@ -60,8 +60,7 @@
         </div>
       </nav>
     </header>
-    <main class="vh-100">
-        
+    <main class="container justify-content-center"> 
       <div class="card" style="width: 18rem">
         <div class="card-body">
           <h5 id="description" class="card-title">Title</h5>
@@ -70,12 +69,11 @@
           <p id="category" class="card-text">
             Category 
           </p>
-          <button id="completedButton" class="btn btn-primary">Completed!</button>
+         <button id="completedButton" class="btn" style="background-color: #266b65; border-color: #266b65; color: white;">Completed!</button> 
         </div>
       </div>
-
     </main>
     <script src="scripts/todo_details.js"></script>
-    <footer class="bg-light">&copy; Code Blooded Inc. 2024</footer>
+    <footer class="bg-light mt-4">&copy; Code Blooded Inc. 2024</footer>
   </body>
 </html>
